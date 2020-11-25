@@ -1,0 +1,36 @@
+{
+	"InputPath":["C:/Development/TradingSystemDev/FolderWithInputFiles"],
+	
+	"TradeSplitterFiles":["Trades_Calculation_0m-3m", "Trades_Calculation_0m-6m", "Trades_Calculation_0m-12m"],
+	
+	"OutputPath":"C:/Development/TradingSystemDev/FolderWithOutputFiles/",
+	
+	"DataFrameFilters": [
+      {
+        "EntrySeconds": "Maximum",
+        "Maximum": "420"
+      },
+      {
+        "PositionType": "Equals",
+        "Equals": "Short"
+      },
+      {
+        "Float": "MinimumMaximum",
+        "Minimum": "0",
+        "Maximum": "500000000"
+      },
+      {
+        "EntryPrice": "MinimumMaximum",
+        "Minimum": "20",
+        "Maximum": "180"
+      }
+	],
+	
+	"DependentVariable_Classification":"WinTrade",
+	
+	"DependentVariable_Regression":"PercentageProfit",
+
+	"IndependentVariables":	"EntrySeconds,Float,Vol1MinRatioMaxPD123,Vol1MinRatioMaxPD123_TotalVolume,AllExchangesVolume,IntradayCurrentMarketGapPerc,Fund52WeekChange,FundShortRatio,FundShortPercofFloat",
+	
+	"OptimizationParameter":"Sum(NetProfit)"
+}
